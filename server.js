@@ -5,9 +5,10 @@ const express = require("express");
 const students = require("./students");
 const cors = require("cors");
 
-// connecting to MongoDB
-//                    127.0.0.1  db stored  db name
-// asynchronous function
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/";
+const PORT = process.env.PORT || 5000;
+
 mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mongodb.net/SkillSpireSearch', { useNewUrlParser : true})
 .then(() => {
     // create a backend server that will listen to our requests
@@ -17,9 +18,14 @@ mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mon
     const app = express();
     app.use(cors());
     
-    app.listen(5000, () => {
+    app.listen(PORT, () => {
         console.log("server has started");
     });
+
+    if (process.env.NODE_ENV === "production"){
+        app.use(express.static("client/build"));
+    }
+
 
     // will retrieve the students page and display all students
     app.get("/students", async(req, res) => {
