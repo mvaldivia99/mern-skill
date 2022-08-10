@@ -8,7 +8,7 @@ const cors = require("cors");
 // connecting to MongoDB
 //                    127.0.0.1  db stored  db name
 // asynchronous function
-mongoose.connect('mongodb://localhost:27017/Test', { useNewUrlParser : true})
+mongoose.connect('mongodb+srv://michellv:f8s0gxWdoqJh9IWs@mern-skill.dhhweqp.mongodb.net/SkillSpireSearch', { useNewUrlParser : true})
 .then(() => {
     // create a backend server that will listen to our requests
     // listen for the student path (req.url: /students)

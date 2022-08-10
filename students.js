@@ -11,6 +11,6 @@ const schema = mongoose.Schema({
     //_id: mongoose.ObjectId,
     fee: Number,
     location: String,
-}, {collection:"students"});
+}, {collection:"Students"});
 
 module.exports = mongoose.model("students", schema);

@@ -1,5 +1,5 @@
 {
-  "name": "nodeexample",
+  "name": "server",
   "version": "1.0.0",
   "description": "test node server",
   "main": "server.js",
@@ -16,5 +16,13 @@
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "mongoose": "^6.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvaldivia99/mern-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mvaldivia99/mern-skill/issues"
+  },
+  "homepage": "https://github.com/mvaldivia99/mern-skill#readme"
 }
