@@ -15,7 +15,7 @@ const StudentCreate = () => {
         //                 key        value
         const student = {firstName: firstName, lastName: lastName, course: course};
 
-        fetch('http://localhost:5000/students/', {
+        fetch('/students/', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(student)

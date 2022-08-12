@@ -4,12 +4,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 const StudentDetails = () => {
     //useParams
     const { id } = useParams();
-    const { data: student, isLoading, errorMessage } = useGetRequest("http://localhost:5000/students/"+id);
+    const { data: student, isLoading, errorMessage } = useGetRequest("/students/"+id);
     console.log(id);
     const navigate = useNavigate();
 
     const deleteStudent = () => {
-        fetch('http://localhost:5000/students/' + student._id, {
+        fetch('/students/' + student._id, {
             method: 'DELETE'
         })
         .then(() => {
